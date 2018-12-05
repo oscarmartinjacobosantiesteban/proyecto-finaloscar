@@ -1,0 +1,110 @@
+# Oscar Martin Jacobo Santiesteban     
+
+## 5 AM Programación          
+
+### Aplicaciones                                                          4 de diciembre del 2018
+
+## Como instalar MySQL 
+
+**1** En el buscador haga la busca para descargar  [**MySQL**](http://www.mysql.com/), ve al apartado de Mysql comunity Server**".
+
+**2. ** Se recomienda que realice la descargue un paquete que sea compatible con nuestro equipo.**
+
+**3. ** Realice lo siguiente cuando el paquete se haya descargado...
+
+![](C:\Users\Lenovo\Pictures\ramona\ramona.png)
+
+**4.** Se muestra la pantalla de inicio.
+
+![](E:\IMAGEN 3.png)
+
+ 
+
+## Como instalar XAMPP
+
+**1**  Descargamos el paquete de MySQL descargaremos el de xampp.
+
+**2** Selecciona los programas a instalar. 
+
+![](C:\Users\Lenovo\Pictures\ramona\xampp.png)
+
+ **3** Configure la ubicación `C:\xampp` para la instalación
+
+![](C:\Users\Lenovo\Pictures\ramona\xampp_1.png)
+
+**4** Al finalizar se mostraran los servicios de apache.
+
+
+
+# Como APACHE y CONFIGURAR el VIRTUALHOST en UBUNTU
+
+**1** Con ayuda de una maquina virtual se instala el UBUNTU
+
+![](E:\UBUNTU.png)
+
+**2** configure el idioma del teclado...
+
+![](C:\Users\Lenovo\Pictures\ramona\U_1.png)
+
+**3** Seleccionamos la primera opcion.
+
+![](C:\Users\Lenovo\Pictures\ramona\U_2.png)
+
+**4** Se registrara el nombre de usuario, contraseña y servidor que utilizaremos.
+
+![](C:\Users\Lenovo\Pictures\ramona\U_5.png)
+
+**7** Se espera que se guarden todos los archivos y cuando finalice se ingresa con el usuario y contraseña. 
+
+### Instalar Apache
+
+**1.** Tenemos que verificar si tenemos los paquetes instalados en Ubuntu
+
+```bash
+$sudo apt update
+```
+
+**2.** Con este código se instala apache
+
+```bash
+$sudo apt install apache2 php mysql-server 
+```
+
+### Configuración de VirtualHost
+
+**1.** Primero buscamos la carpeta sitas avaliable y entramos con este código
+
+```
+$cd /etc/apache2/sites-avaliable
+```
+
+**2.** Entramos a la carpeta library.com
+
+```
+$sudo nano library.com
+```
+
+**3.** Lo configuramos y le damos un nombre de administrador
+
+```
+<virtualhost=:80>
+servername "library.com"
+ServerAlias "www.library.com"
+ServerAdmin "ABIGAIL"
+Document root "var/www/html/library.com"
+ErrorLog "/var/log/library.com-error.log"
+custonlog "/var/log/library.com-access.log" common
+</virtualhost>
+```
+
+**4.** Activamos el virtualhost:
+
+```
+$sudo a2ensite library.com
+```
+
+**5.** Reiniciamos el apache:
+
+```
+$sudo service apache2 restart
+```
